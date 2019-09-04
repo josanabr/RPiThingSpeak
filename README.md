@@ -42,8 +42,8 @@ Seleccionar **System**, **Processor** y seleccionar **"Enable PAE/NX"**.
 Esta opción permite acceder a regiones de memoria más allá de los 4 GB en RAM.
 
 Iniciar la máquina virtual.
-Una vez la máquina termina de arrancar el login del usuario es **pi** y el password es **osboxes.org**[^1].
+Una vez la máquina termina de arrancar el login del usuario es **pi** y el password es **osboxes.org**<sup>osboxes</sup>.
 
 
 
-[^1] https://www.ostechnix.com/osboxes-free-unixlinux-virtual-machines-for-vmware-and-virtualbox/
+[osboxes] https://www.ostechnix.com/osboxes-free-unixlinux-virtual-machines-for-vmware-and-virtualbox/
