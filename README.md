@@ -152,8 +152,8 @@ Adicionar las siguiente líneas:
 
 ```
 
-*/2 * * * *     /home/pi/RPiThingSpeak/readSensor.sh
-1-59/2 * * * *     /home/pi/RPiThingSpeak/subirDatosTS.sh
+*/2 * * * *     /home/pi/RPiThingSpeak/readSensor.sh dev00 >> /home/pi/RPiThingSpeak/logfile
+1-59/2 * * * *     /home/pi/RPiThingSpeak/subirDatosTS.sh >> /home/pi/RPiThingSpeak/logfile
 
 ```
 

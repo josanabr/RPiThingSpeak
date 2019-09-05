@@ -11,13 +11,13 @@
 #
 
 leerSensor() { 
-  echo "leyendo sensor"
+  echo "[readSensor] leyendo sensor"
   epoch=$( date +'%s')
   openWeather.sh > weather_${epoch}.json
 }
 
 if [ ! $# -eq 1 ]; then
-        echo "${0} <filename>"
+        echo "[readSensor] ${0} <filename>"
         exit -1
 fi
 
@@ -30,23 +30,23 @@ FILENAME=${1}
 # temperatura anterior, weather_<EPOCH>.json
 EXISTFILE=$(ls -l *.json | grep weather_ | wc -l | awk '{print $1}')
 if [ ${EXISTFILE} -eq 1 ]; then # Se encontro un archivo weather_*.json
-  echo "Se encontro archivo"
+  echo "[readSensor] Se encontro archivo"
   EPOCH=$( ls *.json | grep weather_ | cut -d '_' -f 2 | cut -d '.' -f 1)
   CURRENTEPOCH=$( date +'%s')
 else
-  echo "No se encontro archivo"
+  echo "[readSensor] No se encontro archivo"
   leerSensor
   cat weather_*.json > ${FILENAME}
   exit 0
 fi
 
 if [ $(( CURRENTEPOCH - EPOCH )) -lt 60 ]; then # El dato aun es vigente
-  echo "Dato vigente"
+  echo "[readSensor] Dato vigente"
   cat weather_*.json > ${FILENAME}
   exit 0
 fi
 # Datos mayores a 5 minutos, desactualizados
-echo "Dato desactualizado"
+echo "[readSensor] Dato desactualizado"
 rm weather_*.json
 leerSensor
 exit 0
