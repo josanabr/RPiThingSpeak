@@ -6,7 +6,7 @@
 # Author: John Sanabria - john.sanabria@correounivalle.edu.co
 # Date: 2019-09-04
 #
-apiKey="MWLJ76FAGNZC3DMW"
+apiKey="YOUR_KEY"
 device="dev00"
 
 RPiTS_HOME="${HOME}/RPiThingSpeak"
