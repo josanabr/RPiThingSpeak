@@ -5,6 +5,7 @@ Este repositorio busca presentar un escenario donde una máquina virtual que cor
 * [Requerimientos](#requerimientos)
   * [OpenWeatherMap](#openweathermap)
   * [ThingSpeak](#thingspeak)
+* [Desarrollo de la práctica](#desarrollo_de_la_practica)
 
 # Requerimientos
 
