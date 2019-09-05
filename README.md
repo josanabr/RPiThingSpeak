@@ -2,9 +2,11 @@
 
 Este repositorio busca presentar un escenario donde una máquina virtual que corre [Raspbian](https://www.raspbian.org/) toma datos de un sensor de temperatura y los envía a la nube.
 
+* [Quick start](#quick-start)
 * [Requerimientos](#requerimientos)
   * [OpenWeatherMap](#openweathermap)
   * [ThingSpeak](#thingspeak)
+  * [Descargar este repositorio](#descargar-este-repositorio)
 * [Desarrollo de la práctica](#desarrollo-de-la-práctica)
   * [Preparación de scripts](#preparación-de-scripts)
     * [Simulando el sensor de temperatura](#simulando-el-sensor-de-temperatura)
@@ -13,6 +15,16 @@ Este repositorio busca presentar un escenario donde una máquina virtual que cor
     * [Subir los datos a ThingSpeak](#subir-los-datos-a-thingspeak)
   * [Despliegue de sistema operativo Raspbian](#despliegue-de-sistema-operativo-raspbian)
   * [Programando la ejecucion del script de forma periódica](#programando-la-ejecucion-del-script-de-forma-periódica)
+
+---
+
+# Quick start
+
+La forma rápida de llevar a cabo esta guía es:
+
+* Cumplir con todos los items de la sección [Requerimientos](#requerimientos).
+* [Desplegar el sistema operativo Raspbian](#despliegue-de-sistema-operativo-raspbian)
+* [Programar la ejecución de los scripts](#programando-la-ejecucion-del-script-de-forma-periódica)
 
 ---
 
@@ -34,6 +46,14 @@ Una vez entra al sitio web con su usuario registrado, visitar [este enlace](http
 Una vez entra al sitio web con su usuario registrado se hace necesario crear un *Channel*. 
 Una vez se crea el canal se debe visitar la pestaña asociada al canal llamada **API Keys**.
 Para efectos de esta práctica nos interesa la que dice **Write API Key**.
+
+## Descargar este repositorio
+
+Abra una terminal y ubicado en el directorio `${HOME}` del usuario ejecute el comando:
+
+```
+git clone https://github.com/josanabr/RPiThingSpeak.git
+```
 
 ---
 
@@ -124,14 +144,15 @@ Adicionar la siguiente línea:
 
 ```
 
-*/2 * * * *     ${HOME}/RPiThingSpeak/readSensor.sh
-1-59/2 * * * *     ${HOME}/RPiThingSpeak/subirDatosTS.sh
+*/2 * * * *     /home/pi/RPiThingSpeak/readSensor.sh
+1-59/2 * * * *     /home/pi/RPiThingSpeak/subirDatosTS.sh
 
 ```
 
 Esto lo que indica es que cada dos minutos, 0, 2, 4, ..., 58; minutos se ejecuta el programa `readSensor.sh`.
 De otro lado, `subirDatosTS.sh` se va a ejecutar también cada dos minutos pero al minuto, 1, 3, 5, ..., 59.
 
+**NOTA** Si su usuario no es `pi` por favor hacer los ajustes en la entrada al cron.
 
 ---
 
