@@ -10,6 +10,10 @@ Este repositorio busca presentar un escenario donde una máquina virtual que cor
     * [Simulando el sensor de temperatura](#simulando-el-sensor-de-temperatura)
       * [Un script que engloba lo anterior](#un-script-que-engloba-lo-anterior)
       * [Leer los datos de dev00](#leer-los-datos-de-dev00)
+    * [Subir los datos a ThingSpeak](#subir-los-datos-a-thingspeak)
+  * [Despliegue de sistema operativo Raspbian](#despliegue-de-sistema-operativo-raspbian)
+
+---
 
 # Requerimientos
 
@@ -70,7 +74,16 @@ Para leer los datos de `dev00` se usa el script `readWeatherJSON.py` como sigue:
 
 ### Subir los datos a ThingSpeak
 
+Para subir los datos a ThingSpeak se hace uso del script `subirDatosTS.sh`.
+El script por defecto buscará el archivo `dev00`. 
+Sin embargo, el usuario puede especificar otro archivo invocando el comando de la siguiente manera:
 
+```
+./subirDatosTS.sh datos.json
+```
+
+En este caso se asume que los datos están en un archivo llamado `datos.json`.
+Vale la pena aclarar que ese archivo debe tener una estructura como la que arroja el API del sitio OpenWeatherMap.
 
 ## Despliegue de sistema operativo Raspbian
 
@@ -95,6 +108,7 @@ Esta opción permite acceder a regiones de memoria más allá de los 4 GB en RAM
 Iniciar la máquina virtual.
 Una vez la máquina termina de arrancar el login del usuario es **pi** y el password es **osboxes.org**<a name="osboxes"><sup>osboxes</sup></a>.
 
+## Programando la ejecucion del script
 
 ---
 
