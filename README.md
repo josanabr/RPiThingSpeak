@@ -135,6 +135,11 @@ Una vez la máquina termina de arrancar el login del usuario es **pi** y el pass
 
 Para ejecutar periódicamente el script se hará uso del servicio `cron` de Unix.
 Ingrese via `ssh` a la máquina virtual desplegada en la [sección anterior](#despliegue-de-sistema-operativo-raspbian).
+
+```
+ssh -p 2222 pi@localhost
+```
+
 El usuario es `pi` y su password es `osboxes.org`.
 
 Para crear las tareas que se quieren ejecutar de forma periódica se hace uso del comando `cron` como sigue:
