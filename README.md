@@ -134,13 +134,16 @@ Una vez la máquina termina de arrancar el login del usuario es **pi** y el pass
 ## Programando la ejecucion del script de forma periódica
 
 Para ejecutar periódicamente el script se hará uso del servicio `cron` de Unix.
-Para crear una tarea en `cron` se debe ejecutar el comando
+Ingrese via `ssh` a la máquina virtual desplegada en la [sección anterior](#despliegue-de-sistema-operativo-raspbian).
+El usuario es `pi` y su password es `osboxes.org`.
+
+Para crear las tareas que se quieren ejecutar de forma periódica se hace uso del comando `cron` como sigue:
 
 ```
 crontab -e
 ```
 
-Adicionar la siguiente línea:
+Adicionar las siguiente líneas:
 
 ```
 
@@ -152,7 +155,7 @@ Adicionar la siguiente línea:
 Esto lo que indica es que cada dos minutos, 0, 2, 4, ..., 58; minutos se ejecuta el programa `readSensor.sh`.
 De otro lado, `subirDatosTS.sh` se va a ejecutar también cada dos minutos pero al minuto, 1, 3, 5, ..., 59.
 
-**NOTA** Si su usuario no es `pi` por favor hacer los ajustes en la entrada al cron.
+**NOTA** Si su usuario no es `pi` por favor hacer los ajustes en la entrada al cron para indicar la ruta `home` adecuada de su usuario.
 
 ---
 
