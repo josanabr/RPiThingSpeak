@@ -2,6 +2,10 @@
 
 Este repositorio busca presentar un escenario donde una máquina virtual que corre [Raspbian](https://www.raspbian.org/) toma datos de un sensor de temperatura y los envía a la nube.
 
+* [Requerimientos](#requerimientos)
+  * [OpenWeatherMap](#openweathermap)
+  * [ThingSpeak](#thingspeak)
+
 # Requerimientos
 
 Para llevar a cabo esta práctica es necesario tener cuenta en los siguientes sitios:
