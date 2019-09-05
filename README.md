@@ -12,6 +12,7 @@ Este repositorio busca presentar un escenario donde una máquina virtual que cor
       * [Leer los datos de dev00](#leer-los-datos-de-dev00)
     * [Subir los datos a ThingSpeak](#subir-los-datos-a-thingspeak)
   * [Despliegue de sistema operativo Raspbian](#despliegue-de-sistema-operativo-raspbian)
+  * [Programando la ejecucion del script de forma periódica](#programando-la-ejecucion-del-script-de-forma-periódica)
 
 ---
 
@@ -33,6 +34,8 @@ Una vez entra al sitio web con su usuario registrado, visitar [este enlace](http
 Una vez entra al sitio web con su usuario registrado se hace necesario crear un *Channel*. 
 Una vez se crea el canal se debe visitar la pestaña asociada al canal llamada **API Keys**.
 Para efectos de esta práctica nos interesa la que dice **Write API Key**.
+
+---
 
 # Desarrollo de la práctica
 
@@ -108,7 +111,27 @@ Esta opción permite acceder a regiones de memoria más allá de los 4 GB en RAM
 Iniciar la máquina virtual.
 Una vez la máquina termina de arrancar el login del usuario es **pi** y el password es **osboxes.org**<a name="osboxes"><sup>osboxes</sup></a>.
 
-## Programando la ejecucion del script
+## Programando la ejecucion del script de forma periódica
+
+Para ejecutar periódicamente el script se hará uso del servicio `cron` de Unix.
+Para crear una tarea en `cron` se debe ejecutar el comando
+
+```
+crontab -e
+```
+
+Adicionar la siguiente línea:
+
+```
+
+*/2 * * * *     ${HOME}/RPiThingSpeak/readSensor.sh
+1-59/2 * * * *     ${HOME}/RPiThingSpeak/subirDatosTS.sh
+
+```
+
+Esto lo que indica es que cada dos minutos, 0, 2, 4, ..., 58; minutos se ejecuta el programa `readSensor.sh`.
+De otro lado, `subirDatosTS.sh` se va a ejecutar también cada dos minutos pero al minuto, 1, 3, 5, ..., 59.
+
 
 ---
 
