@@ -6,6 +6,10 @@ Este repositorio busca presentar un escenario donde una máquina virtual que cor
   * [OpenWeatherMap](#openweathermap)
   * [ThingSpeak](#thingspeak)
 * [Desarrollo de la práctica](#desarrollo-de-la-práctica)
+  * [Preparación de scripts](#preparación-de-scripts)
+    * [Simulando el sensor de temperatura](#simulando-el-sensor-de-temperatura)
+      * [Un script que engloba lo anterior](#un-script-que-engloba-lo-anterior)
+      * [Leer los datos de dev00](#leer-los-datos-de-dev00)
 
 # Requerimientos
 
@@ -56,7 +60,7 @@ Para leer el sensor se ejecutará el siguiente comando,
 
 Los datos quedarán en el archivo `dev00`.
 
-#### Leer los datos de `dev00`
+#### Leer los datos de dev00
 
 Para leer los datos de `dev00` se usa el script `readWeatherJSON.py` como sigue:
 
